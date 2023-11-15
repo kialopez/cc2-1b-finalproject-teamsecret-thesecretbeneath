@@ -40,7 +40,7 @@ def title_screen_selection():
             sys.exit()
 
 def title_screen():
-    os.system('clear')
+    os.system = 'menu'
     print('*********************************')
     print('* Welcome To The Secret Beneath *')
     print('*********************************')
@@ -194,7 +194,6 @@ def main_game_loop():
     # here handle if puzzles have been solved, enemies defeated, explored everything.
 
 def setup_game():
-    os.system('clear')
     # Job Handling ...
     question1 = "Hello, what is your name?\n"
     for character in question1:
@@ -204,8 +203,7 @@ def setup_game():
     player_name = input("> ")
     myPlayer.name = player_name
 
-    question2 = "What are you?\n"
-    question2added = "A warrior, priest, or mage?\n"
+    question2 = "What are you?\nA warrior, priest, or mage?"
     for character in question2:
         sys.stdout.write(character)
         sys.stdout.flush()
@@ -214,12 +212,12 @@ def setup_game():
     valid_jobs = ['warrior', 'mage', 'priest']
     if player_job.lower() in valid_jobs:
         myPlayer.job = player_job
-        print("You are a " + player_job + "Splendid!\n")
+        print("You are a " + player_job + " Splendid!\n")
     while player_job.lower() not in valid_jobs:
         player_job = input("> ")
         if player_job.lower() in valid_jobs:
             myPlayer.job = player_job
-            print("You are a " + player_job + "Splendid!\n")
+            print("You are a " + player_job + " Splendid!\n")
     # player stats #
     if myPlayer.job == 'warrior':
         myPlayer.hp = 120
@@ -232,7 +230,7 @@ def setup_game():
         myPlayer.mp = 80
 
     # introduction #
-    question3 = "Welcome! " + player_name + " the " + player_job + ".\n"
+    question3 = "Welcome! " + player_name + " the " + player_job + "." + "Are you ready to begin your adventure? PRESS ENTER TO CONTINUE\n"
     for character in question3:
         sys.stdout.write(character)
         sys.stdout.flush()
@@ -240,10 +238,10 @@ def setup_game():
     player_name = input("> ")
     myPlayer.name = player_name
 
-    speech1 = "Welcome to the Labrynth!"
-    speech2 = "This is where fame and fortune await the brave"
-    speech3 = "The labrynth which takes the lives of the foolish"
-    speech4 = "Which one are you, I wonder?"
+    speech1 = "Welcome to the Labrynth!\n"
+    speech2 = "This is where fame and fortune await the brave\n"
+    speech3 = "The labrynth which takes the lives of the foolish\n"
+    speech4 = "Which one are you, I wonder?\n"
     speech5 = "Don't die..."
 
     for character in speech1:
@@ -267,9 +265,4 @@ def setup_game():
         sys.stdout.flush()
         time.sleep(0.2)
 
-os.system('clear')
-print('########################')
-print('#     Let us Start!    #')
-print('########################')
-setup_game()
 title_screen()
