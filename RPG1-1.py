@@ -16,7 +16,7 @@ class player:
          self.hp = 0
          self.mp = 0
          self.status_effects =[]
-         self.location = 'b2'
+         self.location = 'a1'
          self.game_over = False
 myPlayer = player()
 
@@ -29,6 +29,8 @@ def title_screen_selections():
         help_menu()
     elif option.lower() == ("credit"):
         credit_menu()
+    elif option.lower() == ("map"):
+        map_menu()
     elif option.lower() == ("quit"):
         sys.exit()
     while option.lower() not in ['play', 'help', 'quit']:
@@ -38,6 +40,10 @@ def title_screen_selections():
             setup_game()# placeholder until written
         elif option.lower() == ("help"):
             help_menu()
+        elif option.lower() == ("credit"):
+            credit_menu()
+        elif option.lower() == ("map"):
+            map_menu()
         elif option.lower() == ("quit"):
             sys.exit()
         
@@ -50,7 +56,8 @@ def title_screen():
     print('             - Play -            ')
     print('             - Help -            ')
     print('             - Quit -            ')
-    print('            - Credit -            ')
+    print('             - Map -             ')
+    print('            - Credit -          ')
     print('    Copyright 2023 Team Secret   ')
     title_screen_selections()
     
@@ -96,7 +103,9 @@ a1 a2... #player starts at b2
 |  |  |  |  |
 -------------
 """
+
 ZONENAME = ''
+MAZE = """"""
 DESCRIPTION = 'description'
 EXAMINATION = 'examine'
 SOLVED = False
@@ -114,31 +123,111 @@ solved_places = {'a1':False, 'a2':False, 'a3':False, 'a4':False,
 zonemap = {
     'a1': {
         ZONENAME: "Damned",
+        MAZE : """
+       ,-----.
+       |Start|
+       |  X  |
+       `--+--'
+          |
+          |
+          V
+         +-+               +-+         +-+         +-+         +-+   +-+
+         | |->             | |->       | |->       | |       <-| | <-| |
+         +-+               +-+         +-+         +-+         +-+   +-+
+          |                 |           |           |           |
+          V                 V           V           V           V
+         
+               +-+                           +-+         +-+            
+             <-| |->                         | |->       | |            
+               +-+                           +-+         +-+            
+                                              |           |
+                                              V           V           A
+                                                                      |
+         +-+         +-+               +-+   +-+   +-+               +-+
+         | |->       | |               | |-> | | <-| |             <-| |
+         +-+         +-+               +-+   +-+   +-+               +-+
+          |           |                 |     | 
+          V           V                 V     V                       A                                                                  |                  
+,----.   +-+                                                      
+|Exit| <-| |                                                       
+`----'   +-+  """,
         DESCRIPTION: 'description',
         EXAMINATION: 'examine',
         SOLVED: False,
         UP: '',
-        DOWN: 'b1',
+        DOWN: 'a2',
         LEFT: '',
-        RIGHT:'a2',
+        RIGHT:'',
     },
     'a2': {
         ZONENAME: "Empty Room",
+        MAZE : """,-----.
+       |Start|
+       `--+--'
+          |
+          |
+          V
+         +-+               +-+         +-+         +-+         +-+   +-+
+         |X|->             | |->       | |->       | |       <-| | <-| |
+         +-+               +-+         +-+         +-+         +-+   +-+
+          |                 |           |           |           |
+          V                 V           V           V           V
+         
+               +-+                           +-+         +-+            
+             <-| |->                         | |->       | |            
+               +-+                           +-+         +-+            
+                                              |           |
+                                              V           V           A
+                                                                      |
+         +-+         +-+               +-+   +-+   +-+               +-+
+         | |->       | |               | |-> | | <-| |             <-| |
+         +-+         +-+               +-+   +-+   +-+               +-+
+          |           |                 |     | 
+          V           V                 V     V                       A                                                                  |                  
+,----.   +-+                                                      
+|Exit| <-| |                                                       
+`----'   +-+  """,
         DESCRIPTION: 'description',
-        EXAMINATION: 'dildo',
+        EXAMINATION: 'examine',
         SOLVED: False,
-        UP: '',
-        DOWN: 'b2',
-        LEFT: 'a1',
+        UP: 'a1',
+        DOWN: 'b1',
+        LEFT: '',
         RIGHT:'a3',
     },
     'a3': {
         ZONENAME: "Treasure!",
+        MAZE : """,-----.
+       |Start|
+       `--+--'
+          |
+          |
+          V
+         +-+               +-+         +-+         +-+         +-+   +-+
+         | |->             |X|->       | |->       | |       <-| | <-| |
+         +-+               +-+         +-+         +-+         +-+   +-+
+          |                 |           |           |           |
+          V                 V           V           V           V
+         
+               +-+                           +-+         +-+            
+             <-| |->                         | |->       | |            
+               +-+                           +-+         +-+            
+                                              |           |
+                                              V           V           A
+                                                                      |
+         +-+         +-+               +-+   +-+   +-+               +-+
+         | |->       | |               | |-> | | <-| |             <-| |
+         +-+         +-+               +-+   +-+   +-+               +-+
+          |           |                 |     | 
+          V           V                 V     V                       A                                                                  |                  
+,----.   +-+                                                      
+|Exit| <-| |                                                       
+`----'   +-+  """,
         DESCRIPTION: 'description',
         EXAMINATION: 'examine',
         SOLVED: False,
         UP: '',
-        DOWN: 'b3',
+        DOWN: 'b2',
         LEFT: 'a2',
         RIGHT:'a4',
     },
@@ -277,16 +366,16 @@ zonemap = {
 
 # Game interactivity
 def print_location():
-    print('\n' + ('#' * (4 + len(myPlayer.location))))
-    print('# ' + myPlayer.location.upper() + ' #')
-    print('# ' + zonemap[myPlayer.location] [ZONENAME] + ' #')
-    print('# ' + zonemap[myPlayer.location] [DESCRIPTION] + ' #')
-    print('# ' + zonemap[myPlayer.location] [EXAMINATION] + ' #')
-    print('\n' + ('#' * (4 + len(myPlayer.location))))
+    print('\n' + ('' * (4 + len(myPlayer.location))))
+    print(' ' + myPlayer.location.upper() + ' ')
+    print(' ' + zonemap[myPlayer.location] [ZONENAME] + ' ')
+    print(' ' + zonemap[myPlayer.location] [DESCRIPTION] + ' ')
+    print(' ' + zonemap[myPlayer.location] [EXAMINATION] + ' ')
+    print('\n' + ('' * (4 + len(myPlayer.location))))
     
 def prompt():
     print("\n" + "========================")
-    print("what would you like to do")
+    print("what would you like to do---'move', 'go', 'travel', 'walk', 'quit', 'examine', 'inspect', 'look',")
     action = input("> ")
     acceptable_actions = ['move', 'go', 'travel', 'walk', 'quit', 'examine', 'inspect', 'look',]
     while action.lower() not in acceptable_actions:
@@ -340,7 +429,7 @@ def setup_game():
     for character in question1:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.02)
     player_name = input("> ")
     myPlayer.name = player_name
     #JOB HANDLING
@@ -353,7 +442,7 @@ def setup_game():
     for character in question2added:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.02)
     player_job = input("> ")
     myPlayer.job = player_job
     valid_jobs = ['warrior', 'mage', 'priest']
@@ -383,7 +472,7 @@ def setup_game():
     for character in question3:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.1)
+        time.sleep(0.02)
     myPlayer.name = player_name
     
     speech1 = "Welcome To the Labrynth!\n"
@@ -393,24 +482,31 @@ def setup_game():
     for character in speech1:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.01)
+        time.sleep(0.02)
     for character in speech2:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.01)
+        time.sleep(0.02)
     for character in speech3:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.1)
+        time.sleep(0.02)
     for character in speech4:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.1)
+        time.sleep(0.02)
         
     os.system('clear')
-    print('########################')
-    print('#     Let us Start!    #')
-    print('########################')
+    print("""  ██████ ▄▄▄█████▓ ▄▄▄       ██▀███  ▄▄▄█████▓ ▐██▌
+▒██    ▒ ▓  ██▒ ▓▒▒████▄    ▓██ ▒ ██▒▓  ██▒ ▓▒ ▐██▌
+░ ▓██▄   ▒ ▓██░ ▒░▒██  ▀█▄  ▓██ ░▄█ ▒▒ ▓██░ ▒░ ▐██▌
+  ▒   ██▒░ ▓██▓ ░ ░██▄▄▄▄██ ▒██▀▀█▄  ░ ▓██▓ ░  ▓██▒
+▒██████▒▒  ▒██▒ ░  ▓█   ▓██▒░██▓ ▒██▒  ▒██▒ ░  ▒▄▄ 
+▒ ▒▓▒ ▒ ░  ▒ ░░    ▒▒   ▓▒█░░ ▒▓ ░▒▓░  ▒ ░░    ░▀▀▒
+░ ░▒  ░ ░    ░      ▒   ▒▒ ░  ░▒ ░ ▒░    ░     ░  ░
+░  ░  ░    ░        ░   ▒     ░░   ░   ░          ░
+      ░                 ░  ░   ░               ░   """)
+ 
     main_game_loop()
 
         
