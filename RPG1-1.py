@@ -27,6 +27,8 @@ def title_screen_selections():
         setup_game()# place holder until written
     elif option.lower() == ("help"):
         help_menu()
+    elif option.lower() == ("credit"):
+        credit_menu()
     elif option.lower() == ("quit"):
         sys.exit()
     while option.lower() not in ['play', 'help', 'quit']:
@@ -41,12 +43,14 @@ def title_screen_selections():
         
 def title_screen():
     os.system('clear')
-    print('*********************************')
+    print('_____________________________________')
     print('* Welcome To The Secret Beneath *')
-    print('*********************************')
+    print('A TEXT BASED ASCII ADVENTURE RPG GAME')
+    print('_____________________________________')
     print('             - Play -            ')
     print('             - Help -            ')
     print('             - Quit -            ')
+    print('            - Credit -            ')
     print('    Copyright 2023 Team Secret   ')
     title_screen_selections()
     
@@ -54,10 +58,25 @@ def help_menu():
     print('*********************************')
     print('* Welcome To The Secret Beneath *')
     print('*********************************')
-    print('!Use up, down, left right to move!')
-    print('!type commands to Do them!')
+    print('!Use/Type "up", "down", "left", "right" to move!')
     print('!use "inspect" to inspect something!')
     print('!May you have a splendid journey!')
+    title_screen_selections()
+
+def credit_menu():
+    print(""" ▄████▄   ██▀███  ▓█████ ▄▄▄     ▄▄▄█████▓ ▒█████   ██▀███    ██████ 
+▒██▀ ▀█  ▓██ ▒ ██▒▓█   ▀▒████▄   ▓  ██▒ ▓▒▒██▒  ██▒▓██ ▒ ██▒▒██    ▒ 
+▒▓█    ▄ ▓██ ░▄█ ▒▒███  ▒██  ▀█▄ ▒ ▓██░ ▒░▒██░  ██▒▓██ ░▄█ ▒░ ▓██▄   
+▒▓▓▄ ▄██▒▒██▀▀█▄  ▒▓█  ▄░██▄▄▄▄██░ ▓██▓ ░ ▒██   ██░▒██▀▀█▄    ▒   ██▒
+▒ ▓███▀ ░░██▓ ▒██▒░▒████▒▓█   ▓██▒ ▒██▒ ░ ░ ████▓▒░░██▓ ▒██▒▒██████▒▒
+░ ░▒ ▒  ░░ ▒▓ ░▒▓░░░ ▒░ ░▒▒   ▓▒█░ ▒ ░░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░▒ ▒▓▒ ▒ ░
+  ░  ▒     ░▒ ░ ▒░ ░ ░  ░ ▒   ▒▒ ░   ░      ░ ▒ ▒░   ░▒ ░ ▒░░ ░▒  ░ ░
+░          ░░   ░    ░    ░   ▒    ░      ░ ░ ░ ▒    ░░   ░ ░  ░  ░  
+░ ░         ░        ░  ░     ░  ░            ░ ░     ░           ░  
+░                                                                    """)
+    print('-------------------------------TOM LUMIBAO-------------------------------')
+    print('-------------------------------KURT LOPEZ--------------------------------')
+    print('-------------------------------CARL FILARCA------------------------------') 
     title_screen_selections()
     
 # Game functionality
@@ -106,7 +125,7 @@ zonemap = {
     'a2': {
         ZONENAME: "Empty Room",
         DESCRIPTION: 'description',
-        EXAMINATION: 'examine',
+        EXAMINATION: 'dildo',
         SOLVED: False,
         UP: '',
         DOWN: 'b2',
@@ -364,8 +383,7 @@ def setup_game():
     for character in question3:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.05)
-    player_name = input("> ")
+        time.sleep(0.1)
     myPlayer.name = player_name
     
     speech1 = "Welcome To the Labrynth!\n"
@@ -375,11 +393,11 @@ def setup_game():
     for character in speech1:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.03)
+        time.sleep(0.01)
     for character in speech2:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.03)
+        time.sleep(0.01)
     for character in speech3:
         sys.stdout.write(character)
         sys.stdout.flush()
@@ -387,7 +405,7 @@ def setup_game():
     for character in speech4:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.2)
+        time.sleep(0.1)
         
     os.system('clear')
     print('########################')
