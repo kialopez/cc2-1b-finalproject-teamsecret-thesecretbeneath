@@ -45,29 +45,52 @@ def title_screen_selections():
     
         
 def title_screen():
-    print('_____________________________________')
-    print('* Welcome To The Secret Beneath *')
-    print('A TEXT BASED ASCII ADVENTURE RPG GAME')
-    print('_____________________________________')
-    print('             - Play -            ')
-    print('             - Help -            ')
-    print('             - Quit -            ')
-    print('            - Credit -          ')
-    print('    Copyright 2023 Team Secret   ')
+    print('_________________________________________________________________________________________________________________________________________')
+    print("""
+▄▄▄█████▓ ██░ ██ ▓█████      ██████ ▓█████  ▄████▄   ██▀███  ▓█████▄▄▄█████▓    ▄▄▄▄   ▓█████  ███▄    █ ▓█████ ▄▄▄     ▄▄▄█████▓ ██░ ██ 
+▓  ██▒ ▓▒▓██░ ██▒▓█   ▀    ▒██    ▒ ▓█   ▀ ▒██▀ ▀█  ▓██ ▒ ██▒▓█   ▀▓  ██▒ ▓▒   ▓█████▄ ▓█   ▀  ██ ▀█   █ ▓█   ▀▒████▄   ▓  ██▒ ▓▒▓██░ ██▒
+▒ ▓██░ ▒░▒██▀▀██░▒███      ░ ▓██▄   ▒███   ▒▓█    ▄ ▓██ ░▄█ ▒▒███  ▒ ▓██░ ▒░   ▒██▒ ▄██▒███   ▓██  ▀█ ██▒▒███  ▒██  ▀█▄ ▒ ▓██░ ▒░▒██▀▀██░
+░ ▓██▓ ░ ░▓█ ░██ ▒▓█  ▄      ▒   ██▒▒▓█  ▄ ▒▓▓▄ ▄██▒▒██▀▀█▄  ▒▓█  ▄░ ▓██▓ ░    ▒██░█▀  ▒▓█  ▄ ▓██▒  ▐▌██▒▒▓█  ▄░██▄▄▄▄██░ ▓██▓ ░ ░▓█ ░██ 
+  ▒██▒ ░ ░▓█▒░██▓░▒████▒   ▒██████▒▒░▒████▒▒ ▓███▀ ░░██▓ ▒██▒░▒████▒ ▒██▒ ░    ░▓█  ▀█▓░▒████▒▒██░   ▓██░░▒████▒▓█   ▓██▒ ▒██▒ ░ ░▓█▒░██▓
+  ▒ ░░    ▒ ░░▒░▒░░ ▒░ ░   ▒ ▒▓▒ ▒ ░░░ ▒░ ░░ ░▒ ▒  ░░ ▒▓ ░▒▓░░░ ▒░ ░ ▒ ░░      ░▒▓███▀▒░░ ▒░ ░░ ▒░   ▒ ▒ ░░ ▒░ ░▒▒   ▓▒█░ ▒ ░░    ▒ ░░▒░▒
+    ░     ▒ ░▒░ ░ ░ ░  ░   ░ ░▒  ░ ░ ░ ░  ░  ░  ▒     ░▒ ░ ▒░ ░ ░  ░   ░       ▒░▒   ░  ░ ░  ░░ ░░   ░ ▒░ ░ ░  ░ ▒   ▒▒ ░   ░     ▒ ░▒░ ░
+  ░       ░  ░░ ░   ░      ░  ░  ░     ░   ░          ░░   ░    ░    ░          ░    ░    ░      ░   ░ ░    ░    ░   ▒    ░       ░  ░░ ░
+          ░  ░  ░   ░  ░         ░     ░  ░░ ░         ░        ░  ░            ░         ░  ░         ░    ░  ░     ░  ░         ░  ░  ░
+                                           ░                                         ░                                                   """)
+    print('''_________________________________________________________________________________________________________________________________________
+          ''')
+    print('                                                                   - Play -                                                                ')
+    print('                                                                   - Help -                                                                ')
+    print('                                                                   - Quit -                                                                ')
+    print('                                                                  - Credit -                                                               ')
+    print('                                                          Copyright 2023 Team Secret                                                       ')
+    print('_________________________________________________________________________________________________________________________________________')
     title_screen_selections()
     
 def help_menu():
-    print('*********************************')
-    print('* Welcome To The Secret Beneath *')
-    print('*********************************')
+    print('________________________________________________')
+    print('''
+        ██░ ██ ▓█████  ██▓     ██▓███  
+        ▓██░ ██▒▓█   ▀ ▓██▒    ▓██░  ██▒
+        ▒██▀▀██░▒███   ▒██░    ▓██░ ██▓▒
+        ░▓█ ░██ ▒▓█  ▄ ▒██░    ▒██▄█▓▒ ▒
+        ░▓█▒░██▓░▒████▒░██████▒▒██▒ ░  ░
+         ▒ ░░▒░▒░░ ▒░ ░░ ▒░▓  ░▒▓▒░ ░  ░
+         ▒ ░▒░ ░ ░ ░  ░░ ░ ▒  ░░▒ ░     
+         ░  ░░ ░   ░     ░ ░   ░░       
+         ░  ░  ░   ░  ░    ░  ░         ''')
+    print('''________________________________________________
+          ''')
     print('!Use/Type "up", "down", "left", "right" to move!')
     print('!use "inspect" to inspect something!')
     print('!May you have a splendid journey!')
-    print('_________________________________')
-    print('             - Play -            ')
-    print('             - Help -            ')
-    print('             - Quit -            ')
-    print('            - Credit -          ')
+    print('''________________________________________________
+          ''')
+    print('                    - Play -                    ')
+    print('                    - Help -                    ')
+    print('                    - Quit -                    ')
+    print('                   - Credit -                   ')
+    print('________________________________________________')
     title_screen_selections()
 
 def credit_menu():
@@ -440,7 +463,7 @@ def main_game_loop():
     
 def setup_game():
     #Name collection
-    question1 = "hello, what is your name?\n"
+    question1 = "Hello, what is your name?\n"
     for character in question1:
         sys.stdout.write(character)
         sys.stdout.flush()
@@ -494,19 +517,17 @@ def setup_game():
         sys.stdout.flush()
         time.sleep(0.02)
     myPlayer.name = player_name
-    speech0 = """
-    you wake up from your nap at the back of the caravan being pulled by two horses. 
-    as you look around you see a pile of gear made out of steal and leather. the 
-    gear has seen combat with wear and tear all over. then you remember its yours. the 
-    caravan sudenly stoped and you hear an old man shouting "Wake up!, Wake up!, Now pay me and get out!. 
-    as you stepped out of the caravan, your eyes widen as you see a huge tower stand before you, made out of a brown stone 
-    like material and covered with overgrown vines. you stand at the foot of the tower in awe. two giant statues guard the entrance 
-    of the tower made out of granite and a red crystal for the eyes, they look like warriors that has seen many horrors and conquered them. 
-    you remember your goal, why you came here, for it is said if you get to the very top you will be granted a wish.\n"""
-    speech1 = " your resolve stands firm as you enter the tower.\n"
-    #speech2 = "This is where fame and fortune awaits the brave\n"
-    #speech3 = "The labrynth which takes the lives of the foolish\n"
-    #speech4 = "which one are you i wonder?\n"
+    speech0 = "You wake up from your nap at the back of the caravan being pulled by two horses."
+    speech1 = " As you look around you see a pile of gear made out of steel and leather.\n"
+    speech2 = "The gear has seen combat with wear and tear all over.\n"
+    speech3 = "Then you remember it is yours.\n"
+    speech4 = "The caravan suddenly stoped and you hear an old man shouting 'Wake up! Wake up! Now pay me and get out!'\n"
+    speech5 = "As you step out of the caravan, your eyes widen as you see a huge tower stand before you, made out of brown stone-like material and covered with overgrown vines.\n"
+    speech6 = "You stand at the foot of the tower in awe.\n"
+    speech7 = "Two giant statues guard the entrance of the tower made out of granite and a red crystal for the eyes, they look like warriors that have seen many horrors and conquered them.\n"
+    speech8 = "You remember your goal, and why you came here, for it is said if you get to the very top you will be granted a wish.\n"
+    speech9 = "Your resolve stands firm as you enter the tower.\n"
+
     for character in speech0:
         sys.stdout.write(character)
         sys.stdout.flush()
@@ -515,18 +536,38 @@ def setup_game():
         sys.stdout.write(character)
         sys.stdout.flush()
         time.sleep(0.02)
-    #for character in speech2:
-        #sys.stdout.write(character)
-        #sys.stdout.flush()
-        #time.sleep(0.02)
-    #for character in speech3:
-        #sys.stdout.write(character)
-        #sys.stdout.flush()
-        #time.sleep(0.02)
-    #for character in speech4:
-        #sys.stdout.write(character)
-        #sys.stdout.flush()
-        #time.sleep(0.02)
+    for character in speech2:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
+    for character in speech3:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
+    for character in speech4:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
+    for character in speech5:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
+    for character in speech6:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
+    for character in speech7:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
+    for character in speech8:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
+    for character in speech9:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
         
     print("============================================================")
     print("""
