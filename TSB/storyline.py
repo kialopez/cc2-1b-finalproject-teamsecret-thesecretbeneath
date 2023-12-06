@@ -14,7 +14,7 @@ class player:
 myPlayer = player()
 
 def setup_game():
-    #Name collection
+
     question1 = "hello, what is your name?\n"
     for character in question1:
         sys.stdout.write(character)
@@ -27,7 +27,7 @@ def setup_game():
     else:    
         myPlayer.name = player_name
         os.system('cls')
-    #JOB HANDLING
+
     question2 = "What do you want to be?\n"
     question2added = "(You can play as a warrior, mage, or priest)\n"
     for character in question2:
@@ -52,7 +52,7 @@ def setup_game():
             print("You are a " + player_job + "i see...\n")
             
             
-    ##Player stats
+
     if myPlayer.job == 'warrior':
         myPlayer.hp = 120
         myPlayer.mp = 20
@@ -64,7 +64,7 @@ def setup_game():
         myPlayer.mp = 60
         
     
-    #Introduction
+
     question3 = "Welcome! " + player_name + " the " + player_job + ".\n"
     for character in question3:
         sys.stdout.write(character)

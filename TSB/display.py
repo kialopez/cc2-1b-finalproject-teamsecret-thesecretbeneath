@@ -68,8 +68,7 @@ def playscreen():
         print("INVALID!")
         time.sleep(1)
         playscreen()
-
-#Death screen function
+        
 def deathScreen():
     print("YOU HAVE BEEN SLAINED")
     print()
@@ -85,7 +84,6 @@ def deathScreen():
         eraser1(8)
         deathScreen()
 
-#User input
 def userInput():
     global user
     user = input("> ").capitalize()
