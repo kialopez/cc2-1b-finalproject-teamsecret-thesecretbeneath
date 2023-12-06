@@ -86,41 +86,41 @@ def setup_game():
     for character in speech0:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.005)
     for character in speech1:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.02)
     for character in speech2:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.02)
     for character in speech3:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.02)
     for character in speech4:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.02)
     for character in speech5:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.02)
     for character in speech6:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.02)
     for character in speech7:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.02)
     for character in speech8:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.02)
     for character in speech9:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00001)
+        time.sleep(0.02)
     os.system('cls')
