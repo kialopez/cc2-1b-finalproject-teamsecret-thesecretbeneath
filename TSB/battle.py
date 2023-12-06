@@ -20,6 +20,7 @@ def enemyFight():
 
     while hp > 0:
         if hp >= 0:
+            print(f"---------------")
             print(f"YOUR STATS:")
             print(f"DAMAGE: {damage}")
             print(f"SHIELD: {defense}")
