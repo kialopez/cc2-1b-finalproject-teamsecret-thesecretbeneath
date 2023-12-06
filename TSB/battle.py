@@ -20,9 +20,11 @@ def enemyFight():
 
     while hp > 0:
         if hp >= 0:
+            print(f"YOUR STATS:")
             print(f"DAMAGE: {damage}")
             print(f"SHIELD: {defense}")
             print(f"HP: {hp}")
+            print(f"---------------")
             print(f"ENEMY HP: {enhp}")
             print()
             print("CHOOSE YOUR MOVE")
@@ -30,11 +32,11 @@ def enemyFight():
             print(f"HEAL ({hppotion} LEFT)")
             print("ESCAPE")
             print()
-            choice = input("ENTER CHOICE:")
+            choice = input("MOVE:")
             print()
             time.sleep(0.5)
 
-            if choice == "ATTACK" or choice == "Attack" or choice == "damage": 
+            if choice == "ATTACK" or choice == "Attack" or choice == "damage" or choice == "attack": 
                 dmg = random.randint(damage, damage+125)
                 enhp -= dmg
                 if enhp <= 0:
