@@ -6,6 +6,8 @@ import sys
 import time
 import random
 
+from generator import make_maze
+
 screen_width = 100
 
 # player #
@@ -601,6 +603,7 @@ def setup_game():
     print("============================================================")
     print("You are at 'X'")
     
+    make_maze()
     main_game_loop()
 
         
